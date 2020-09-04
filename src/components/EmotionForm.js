@@ -4,19 +4,18 @@ import "../styles.css";
 const EmotionForm = (props) => {
 
         return (
-            <div>
-                <h3>{props.name}</h3>
-                <br />
-                <span>1 </span>
-                <span>2 </span>
-                <span>3 </span>
-                <span>4 </span>
-                <span>5 </span>
-                <span>6 </span>
-                <span>7 </span>
-                <span>8 </span>
-                <span>9 </span>
-                <span>10</span>
+            <div data-name={props.name}>
+                <p>{props.name}: </p>
+                <span onClick={props.numberClick}>1 </span>
+                <span onClick={props.numberClick}>2 </span>
+                <span onClick={props.numberClick}>3 </span>
+                <span onClick={props.numberClick}>4 </span>
+                <span onClick={props.numberClick}>5 </span>
+                <span onClick={props.numberClick}>6 </span>
+                <span onClick={props.numberClick}>7 </span>
+                <span onClick={props.numberClick}>8 </span>
+                <span onClick={props.numberClick}>9 </span>
+                <span onClick={props.numberClick}>10</span>
             </div>
         );
 }
