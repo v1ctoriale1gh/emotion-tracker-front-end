@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import EmotionForm from './EmotionForm.js';
 import Container from 'react-bootstrap/Container';
-//import Row from 'react-bootstrap/Row';
-//import Col from 'react-bootstrap/Col';
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button';
-//import DropDown from './DropDown.js'
 import "../styles.css";
 
 
