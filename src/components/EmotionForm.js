@@ -1,11 +1,19 @@
 import React from 'react';
 import "../styles.css";
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const EmotionForm = (props) => {
 
         return (
-            <div data-name={props.name}>
-                <p className="gradient">{props.name}: </p>
+
+          <Card style={{ width: '9rem' }}>
+            <Card.Body>
+              <Card.Title><p className="gradient">{props.name}: </p></Card.Title>
+            </Card.Body>
+            <ListGroup className="list-group-flush">
+              <ListGroup.Item>
+                <div data-name={props.name}>
                 <span onClick={props.numberClick}>0 </span> 
                 <span onClick={props.numberClick}>1 </span> 
                 <span onClick={props.numberClick}>2 </span>  
@@ -17,7 +25,10 @@ const EmotionForm = (props) => {
                 <span onClick={props.numberClick}>8 </span>  
                 <span onClick={props.numberClick}>9 </span>  
                 <span onClick={props.numberClick}>10</span>
-            </div>
+                </div>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
         );
 }
 

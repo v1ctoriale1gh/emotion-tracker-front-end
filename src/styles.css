@@ -5,19 +5,19 @@
   
   @keyframes pulse {
     0% {
-      color: #00ccff;
+      color: rgb(239,121,140);
     }
     25% {
-      color: #ff9966;
+      color: rgb(172, 194, 186);
     }
     50% {
-        color: #00ccff;
+        color: rgb(239,121,140);
       }
       75% {
-        color: #ff9966;
+        color: rgb(172, 194, 186);
       }
       100% {
-        color: #00ccff;
+        color: rgb(239,121,140);
       }
   }
 
@@ -32,7 +32,7 @@
 
   .gradient {
     font-size: 15px;
-    background: -webkit-linear-gradient(#00ccff, #ff9966);
+    background: -webkit-linear-gradient(rgb(172, 194, 186), rgb(239,121,140));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -40,12 +40,12 @@
     
 
   h3 {
-      color: #00ccff;
+      color: white;
       font-size: 20px;
   }
 
   h4 {
-    color: #00ccff;
+    color: white;
     font-size: 10px;
    }
 
