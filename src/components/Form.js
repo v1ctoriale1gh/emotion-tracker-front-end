@@ -3,6 +3,8 @@ import EmotionForm from './EmotionForm.js';
 import Container from 'react-bootstrap/Container';
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button';
+import { connect } from 'react-redux';
+import { addLog } from '../actions';
 import "../styles.css";
 
 
@@ -12,13 +14,15 @@ class Form extends Component {
     constructor() {
         super();
         this.state = {
+            log: {
             Fear: '0',
             Anger: '0',
             Sadness: '0',
             Anxiety: '0',
             Happiness: '0',
             Peacefulness: '0',
-            Gratitude: '0',
+            Gratitude: '0'
+            }
         };
     };
 
@@ -27,6 +31,7 @@ class Form extends Component {
         if (e.target.className === "chosen-number") {
             e.target.className = ""
             this.setState({
+                ...this.state.log,
                 [e.target.parentElement.dataset.name]: '0'
             });
         } else {
@@ -39,7 +44,7 @@ class Form extends Component {
     }
 
     handleSubmit = () => {
-        console.log(this.state);
+        this.props.addLog(this.state);;
     }
 
 
@@ -67,4 +72,4 @@ class Form extends Component {
     };
 };
 
-export default Form;
+export default connect(null, { addLog })(Form);

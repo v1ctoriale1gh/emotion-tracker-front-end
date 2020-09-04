@@ -2,19 +2,18 @@ import { combineReducers } from "redux";
 
 
 const rootReducer = combineReducers({
-    authors: authorsReducer,
-    books: booksReducer
+    logs: logsReducer,
+    charts: chartReducer
   });
    
   export default rootReducer;
    
-  function booksReducer(state = [], action) {
-    let idx;
+  function chartReducer(state = [], action) {
     switch (action.type) {
-      case "ADD_BOOK":
+      case "GET_CHART":
         //return [...state, action.book];
   // 
-      case "REMOVE_BOOK":
+      case "GET_EMOTION_CHART":
        // idx = state.findIndex(book => book.id  === action.id)
        // return [...state.slice(0, idx), ...state.slice(idx + 1)];
    
@@ -23,24 +22,10 @@ const rootReducer = combineReducers({
     }
   }
    
-  function authorsReducer(state = [], action) {
-    let idx;
+  function logsReducer(state = [], action) {
     switch (action.type) {
-      case "ADD_AUTHOR":
-      //  return [...state, action.author];
-   
-      case "REMOVE_AUTHOR":
-        //idx = state.findIndex(author => author.id  === action.id)
-        //return [...state.slice(0, idx), ...state.slice(idx + 1)];
-   
-        case "ADD_BOOK":
-          //let existingAuthor = state.filter(
-          //  author => author.authorName === action.book.authorName
-          //);
-          //if (existingAuthor.length > 0) {
-          //  return state;
-          //} else {
-          //  return [...state, { authorName: action.book.authorName, id: uuid() }];
+      case "ADD_LOG":
+        return [...state, action.log];
       default:
         return state;
     }
