@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
   function logsReducer(state = [], action) {
     switch (action.type) {
       case "ADD_LOG":
-        return [...state, action.log];
+        return [state, action.log];
       default:
         return state;
     }
