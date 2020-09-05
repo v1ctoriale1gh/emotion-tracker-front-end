@@ -13,9 +13,8 @@ const rootReducer = combineReducers({
       case "GET_CHART":
         //return [...state, action.book];
   // 
-      case "GET_EMOTION_CHART":
-       // idx = state.findIndex(book => book.id  === action.id)
-       // return [...state.slice(0, idx), ...state.slice(idx + 1)];
+      case "GET_ALL_EMOTION_CHART_DATA":
+       return [state, action.logs]
    
       default:
         return state;
