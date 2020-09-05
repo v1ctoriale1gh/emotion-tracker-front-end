@@ -5,7 +5,6 @@ import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
 import { addLog } from '../actions';
-import "../styles.css";
 
 
 
@@ -14,7 +13,6 @@ class Form extends Component {
     constructor() {
         super();
         this.state = {
-            log: {
             Fear: '0',
             Anger: '0',
             Sadness: '0',
@@ -22,7 +20,6 @@ class Form extends Component {
             Happiness: '0',
             Peacefulness: '0',
             Gratitude: '0'
-            }
         };
     };
 
@@ -31,7 +28,6 @@ class Form extends Component {
         if (e.target.className === "chosen-number") {
             e.target.className = ""
             this.setState({
-                ...this.state.log,
                 [e.target.parentElement.dataset.name]: '0'
             });
         } else {
@@ -40,7 +36,7 @@ class Form extends Component {
                 [e.target.parentElement.dataset.name]: e.target.innerText.split(" ")[0]
             });
         }
-        console.log(this.state);
+        //console.log(this.state);
     }
 
     handleSubmit = () => {

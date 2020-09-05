@@ -1,5 +1,4 @@
 import React from 'react';
-import "../styles.css";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
