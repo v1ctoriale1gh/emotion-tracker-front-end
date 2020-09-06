@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Chart } from "react-google-charts";
 import Container from 'react-bootstrap/Container';
+import { connect } from 'react-redux';
+import { getAllEmotionChartData } from '../actions';
 
-export default class AllEmotionChart extends Component {
+class AllEmotionChart extends Component {
      
     
     constructor(props) {
@@ -12,36 +14,62 @@ export default class AllEmotionChart extends Component {
         hAxis: { title: "Emotions" },
         vAxis: { title: "Intensity", viewWindow: { min: 0, max: 15 } },
         }
-        this.data = [
-            ['Day', 'Fear', 'Anger', 'Sadness', 'Anxiety', 'Happiness', 'Peacefulness', 'Gratitude'],
-            ['2004/05',  1,      10,      3,        3,           4,             1,          9     ],
-            ['2005/06',  3,      8,       5,        6,           3,             2,          9     ],
-            ['2006/07',  5,      6,       8,        4,           4,             3,          9     ],
-            ['2007/08',  9,      4,       4,        3,           5,             7,          9     ],
-            ['2008/09',  3,      2,       7,        1,           7,             8,          9     ],
-            ['2004/10',  1,      10,      3,        3,           4,             1,          9     ],
-            ['2005/11',  3,      8,       5,        6,           3,             2,          9     ],
-            ['2006/12',  5,      6,       8,        4,           4,             3,          9     ],
-            ['2007/13',  9,      4,       4,        3,           5,             7,          9     ],
-            ['2008/14',  3,      2,       7,        1,           7,             8,          9     ]
-        ]
+    }        
+
+
+    componentDidMount() {
+        this.props.getAllEmotionChartData()
     }
 
-  render() {
-    return (
-      <Container className={"all-emotion-chart"}>
-        <Chart
-          chartType="ColumnChart"
-          options={this.options}
-          data={this.data}
-          width="100%"
-          height="400px"
-          legendToggle
-        />
-      </Container>
-    );
-  }
+    composeData(){
+        let data = [['Day', 'Fear', 'Anger', 'Sadness', 'Anxiety', 'Happiness', 'Peacefulness', 'Gratitude']]
+        let dates = []
+        let emotionData = []
+        console.log(this.props)
+        this.props.chartData.forEach(log => {
+            dates.push(log.created_at.split("T")[0])
+            let logArray = []
+            log.emotions.forEach(emotion => {
+                logArray.push(parseInt(emotion.intensity))
+            })
+            emotionData.push(logArray)
+        })
+        dates.forEach(date => {
+            data.push([date])
+        })
+        emotionData.forEach((arrayOfNums, index) => {
+            let position = index + 1
+            data[position] = [`${data[position]}`, ...arrayOfNums]
+        })
+        console.log(data)
+        return  data
+    }
+
+    render() {
+      return (
+        <Container className={"all-emotion-chart"}>
+          <Chart
+            chartType="ColumnChart"
+            options={this.options}
+            data={this.composeData()}
+            width="100%"
+            height="400px"
+            legendToggle
+          />
+        </Container>
+      );
+    }
 }
+
+function mapStateToProps(state) {
+    return {
+        chartData: state.charts
+    }
+}
+
+export default connect(mapStateToProps, { getAllEmotionChartData })(AllEmotionChart);
+
+
 
 /*
 Fear: '0',
