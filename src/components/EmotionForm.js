@@ -4,6 +4,12 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const EmotionForm = (props) => {
 
+
+  function composeNumberSpans() {
+    let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    return numArray.map(num => <span onClick={props.numberClick}>{num} </span>)
+  }
+
         return (
 
           <Card style={{ width: '9rem' }}>
@@ -13,17 +19,7 @@ const EmotionForm = (props) => {
             <ListGroup className="list-group-flush">
               <ListGroup.Item>
                 <div data-name={props.name}>
-                <span onClick={props.numberClick}>0 </span> 
-                <span onClick={props.numberClick}>1 </span> 
-                <span onClick={props.numberClick}>2 </span>  
-                <span onClick={props.numberClick}>3 </span>  
-                <span onClick={props.numberClick}>4 </span>  
-                <span onClick={props.numberClick}>5 </span>  
-                <span onClick={props.numberClick}>6 </span>  
-                <span onClick={props.numberClick}>7 </span>  
-                <span onClick={props.numberClick}>8 </span>  
-                <span onClick={props.numberClick}>9 </span>  
-                <span onClick={props.numberClick}>10</span>
+                {composeNumberSpans()}
                 </div>
               </ListGroup.Item>
             </ListGroup>
