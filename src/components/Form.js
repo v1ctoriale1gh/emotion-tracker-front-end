@@ -44,8 +44,7 @@ class Form extends Component {
     }
 
     composeEmotionForms = (nameArray) => {
-        console.log(nameArray)
-    return nameArray.map(name => <EmotionForm name={`${name}`} numberClick={this.numberClick} />)
+    return nameArray.map(name => <EmotionForm key={name} name={`${name}`} numberClick={this.numberClick} />)
     }
 
 

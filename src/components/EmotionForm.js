@@ -7,7 +7,7 @@ const EmotionForm = (props) => {
 
   function composeNumberSpans() {
     let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    return numArray.map(num => <span onClick={props.numberClick}>{num} </span>)
+    return numArray.map(num => <span key={num} onClick={props.numberClick}>{num} </span>)
   }
 
         return (

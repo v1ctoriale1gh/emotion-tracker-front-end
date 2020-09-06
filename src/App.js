@@ -4,6 +4,7 @@ import Form from './components/Form.js';
 import DropDown from './components/DropDown.js';
 import Footer from './components/Footer.js';
 import AllEmotionChart from './components/AllEmotionChart.js';
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -13,9 +14,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <DropDown onClickForDropDown={this.onClickForDropDown} className="flex-sm-row-reverse" />
+        <DropDown className="flex-sm-row-reverse" />
+        <Route path="/emotion-log">
         <Form />
+        </Route>
+        <Route path="/emotion-chart">
         <AllEmotionChart />
+        </Route>
         <Footer />
       </div>
     );

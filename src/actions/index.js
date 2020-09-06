@@ -14,13 +14,12 @@ export const addLog = (log) => {
                 body: JSON.stringify(logData)
                 })
                 .then(response => response.json())
-                .then(log => dispatch({ type: 'ADD_LOG', logData}));
+                .then(() => dispatch({ type: 'ADD_LOG', logData}));
             };
     };
 
     export const getAllEmotionChartData = () => {
         return (dispatch) => {
-            console.log("HELLLLO")
             dispatch({
                 type: 'BEGIN_GET_ALL_EMOTION_CHART_DATA'});
                 fetch('http://localhost:3000/users/1/logs')

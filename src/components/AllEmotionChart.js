@@ -25,7 +25,6 @@ class AllEmotionChart extends Component {
         let data = [['Day', 'Fear', 'Anger', 'Sadness', 'Anxiety', 'Happiness', 'Peacefulness', 'Gratitude']]
         let dates = []
         let emotionData = []
-        console.log(this.props)
         this.props.chartData.forEach(log => {
             dates.push(log.created_at.split("T")[0])
             let logArray = []
@@ -41,7 +40,6 @@ class AllEmotionChart extends Component {
             let position = index + 1
             data[position] = [`${data[position]}`, ...arrayOfNums]
         })
-        console.log(data)
         return  data
     }
 
