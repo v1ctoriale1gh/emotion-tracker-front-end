@@ -43,6 +43,11 @@ class Form extends Component {
         this.props.addLog(this.state);;
     }
 
+    composeEmotionForms = (nameArray) => {
+        console.log(nameArray)
+    return nameArray.map(name => <EmotionForm name={`${name}`} numberClick={this.numberClick} />)
+    }
+
 
     render() {
         return(
@@ -51,14 +56,9 @@ class Form extends Component {
                 <h4>0 being not at all and 10 being very intense</h4>
                 <Container>
                 <CardGroup >
-                        <EmotionForm name={"Fear"} numberClick={this.numberClick} />
-                        <EmotionForm name={"Anger"} numberClick={this.numberClick} />
-                        <EmotionForm name={"Sadness"} numberClick={this.numberClick} />
+                    {this.composeEmotionForms(["Fear", "Anger", "Sadness"])}
                 </CardGroup><CardGroup>
-                        <EmotionForm name={"Anxiety"} numberClick={this.numberClick} />
-                        <EmotionForm name={"Happiness"} numberClick={this.numberClick} />
-                        <EmotionForm name={"Peacefulness"} numberClick={this.numberClick} />
-                        <EmotionForm name={"Gratitude"} numberClick={this.numberClick} />
+                    {this.composeEmotionForms(["Anxiety", "Happiness", "Peacefulness", "Gratitude"])}
                 </CardGroup>
                 </Container>
                 <br />
