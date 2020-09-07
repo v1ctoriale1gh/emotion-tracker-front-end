@@ -134,3 +134,8 @@ h4 {
 .user-cards {
   text-align: center;
 }
+
+.errors {
+  font-size: 10px;
+  color: red;
+}

@@ -43,7 +43,7 @@ export const addLog = (log) => {
                     body: JSON.stringify(userData)})
                     .then((obj) => obj.json())
                     .then((obj) => dispatch({ type: 'ADD_USER', user: obj }))
-                    .catch((error) => dispatch({ type: 'FETCH_FAILURE', error: error }))
+                    //.catch((error) => dispatch({ type: 'FETCH_FAILURE', error: error }))
         };
     };
             

@@ -26,6 +26,8 @@ class UserSignup extends Component {
           this.props.addUser(this.state)
       }
 
+      
+
     render() {
         return(
             <div className={'user-cards'}>
@@ -33,6 +35,7 @@ class UserSignup extends Component {
             <Card >
                 <Card.Header>Sign Up</Card.Header>
                 <Card.Body>
+                    <p className={'errors'}>{this.props.error}</p>
                     <form>
                     <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" /><br />
                     <input type="text" name="name" onChange={this.handleInput} placeholder="Enter your first name" /><br />
@@ -49,4 +52,10 @@ class UserSignup extends Component {
 };
 
 
-export default connect(null, { addUser })(UserSignup);
+function mapStateToProps(state) {
+    return {
+        error: state.user.error
+    }
+}
+
+export default connect(mapStateToProps, { addUser })(UserSignup);
