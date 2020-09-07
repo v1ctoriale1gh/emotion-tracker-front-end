@@ -2,7 +2,7 @@
 
 ## Description
 
-This application is a place for people to post meetups and events for paddling (Kayaking, stand up baddleboard, rafting, and canoes) in the United States.  Navigate through a drop down menu to a state, then city, then event.  Add new events from the menu dropdown on the events page.
+This application is a webapp for people to log, chart, and track their emotions.
 
 ## Setting Up
 First navigate to the back-end repository of this project: https://github.com/v1ctoriale1gh/emotion-tracker-back-end
@@ -42,3 +42,4 @@ Bug reports and pull requests are welcome on GitHub.
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+# emotion-tracker-back-end
