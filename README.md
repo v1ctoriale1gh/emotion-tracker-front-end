@@ -1,69 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# README
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This application is a place for people to post meetups and events for paddling (Kayaking, stand up baddleboard, rafting, and canoes) in the United States.  Navigate through a drop down menu to a state, then city, then event.  Add new events from the menu dropdown on the events page.
 
-### `yarn start`
+## Setting Up
+First navigate to the back-end repository of this project: https://github.com/v1ctoriale1gh/emotion-tracker-back-end
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then download or clone that repository.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Then run
+```
+bundle install
+```
+Next, run
+```
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
-### `yarn test`
+Next, run
+```
+rails s
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Then Navigate back to this repository:
 
-### `yarn build`
+Then download or clone this repository.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then run 
+```
+npm start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Contributor's Guide
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Bug reports and pull requests are welcome on GitHub.
 
-### `yarn eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# emotion-tracker-front-end
