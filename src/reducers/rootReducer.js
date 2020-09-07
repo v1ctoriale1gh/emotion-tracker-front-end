@@ -4,7 +4,8 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
     logs: logsReducer,
     charts: chartReducer,
-    user: userReducer
+    user: userReducer,
+    error: errorReducer
   });
    
   export default rootReducer;
@@ -24,6 +25,14 @@ const rootReducer = combineReducers({
     }
   }
 
+  function errorReducer(state = [], action) {
+    switch(action.type) {
+      case 'FETCH_FAILURE':
+        return action.error
+      default:
+        return state;
+    }
+  }
   function userReducer(state = [], action) {
     switch (action.type) {
       case "ADD_USER":

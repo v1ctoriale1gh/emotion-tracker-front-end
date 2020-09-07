@@ -29,24 +29,23 @@ export const addLog = (log) => {
 
         export const addUser = (user) => {
             let userData = {
+                user:
                 user
             }
+            console.log(userData)
             return (dispatch) => {
                 dispatch({type: 'BEGIN_ADD_USER' });
-                fetch('https://localhost:3000/users', {
+                fetch('http://localhost:3000/users', {
                     method: "POST",
                     headers: {
-                        'Content-type': 'application/json'
+                        'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(userData)
-                    })
+                    body: JSON.stringify(userData)})
                     .then((obj) => obj.json())
-                    .then(() => dispatch({ type: 'ADD_USER', userData }))
-                    .catch((error) => {
-                        console.error('Error:', error);
-                      })
-                }
-            }
+                    .then((obj) => dispatch({ type: 'ADD_USER', user: obj }))
+                    .catch((error) => dispatch({ type: 'FETCH_FAILURE', error: error }))
+        };
+    };
             
         
 
