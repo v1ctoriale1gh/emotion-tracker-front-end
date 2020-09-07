@@ -36,7 +36,6 @@ class Form extends Component {
                 [e.target.parentElement.dataset.name]: e.target.innerText.split(" ")[0]
             });
         }
-        //console.log(this.state);
     }
 
     handleSubmit = () => {

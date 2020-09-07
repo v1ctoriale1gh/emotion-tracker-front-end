@@ -11,9 +11,6 @@ import { Route } from 'react-router-dom';
 
 class App extends React.Component {
 
-  onClickForDropDown = (e) => {
-    console.log(e.target)
-  }
   render() {
     return (
       <div className="App">
