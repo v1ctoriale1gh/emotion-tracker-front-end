@@ -111,8 +111,8 @@ h4 {
 }
 
 .footer {
-  height: 226px;
-  text-align: center;
+  height: 248px;
+  text-align: left;
   color: white;
   position: relative;
 }
@@ -138,4 +138,9 @@ h4 {
 .errors {
   font-size: 10px;
   color: red;
+}
+
+.home {
+  width: 500px;
+  text-align: center;
 }

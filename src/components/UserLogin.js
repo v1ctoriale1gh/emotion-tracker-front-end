@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../actions';
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 
-class UserSignup extends Component {
+class UserLogin extends Component {
 
     state = {
-        name: '',
         username: '',
-        password: '',
+        password: ''
         }
       
 
@@ -23,7 +21,7 @@ class UserSignup extends Component {
       }
 
       handleSubmit = (e) => {
-          this.props.addUser(this.state)
+          console.log(e)
       }
 
       
@@ -33,14 +31,13 @@ class UserSignup extends Component {
             <div className={'user-cards'}>
             <Container style={{ width: '15rem' }}>
             <Card >
-                <Card.Header>Sign Up</Card.Header>
+                <Card.Header>Log in</Card.Header>
                 <Card.Body>
                     <p className={'errors'}>{this.props.error}</p>
                     <form>
                     <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" /><br />
-                    <input type="text" name="name" onChange={this.handleInput} placeholder="Enter your first name" /><br />
                     <input type="password" name="password" onChange={this.handleInput} placeholder="Password" /><br /><br />
-                    <Button variant="outline-secondary" size="sm" onClick={this.handleSubmit}>Sign Up</Button>
+                    <Button variant="outline-secondary" size="sm" onClick={this.handleSubmit}>Log in</Button>
                     </form>
                 </Card.Body>
             </Card>
@@ -54,8 +51,8 @@ class UserSignup extends Component {
 
 function mapStateToProps(state) {
     return {
-        error: state.user.signuperror
+        error: state.user.loginerror
     }
 }
 
-export default connect(mapStateToProps, { addUser })(UserSignup);
+export default connect(mapStateToProps)(UserLogin);
