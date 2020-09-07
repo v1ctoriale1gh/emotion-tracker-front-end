@@ -13,7 +13,6 @@ export const addLog = (log) => {
                 },
                 body: JSON.stringify(logData)
                 })
-                .then(response => response.json())
                 .then(() => dispatch({ type: 'ADD_LOG', logData}));
             };
     };

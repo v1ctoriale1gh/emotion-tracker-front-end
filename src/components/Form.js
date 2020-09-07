@@ -40,7 +40,10 @@ class Form extends Component {
     }
 
     handleSubmit = () => {
-        this.props.addLog(this.state);;
+        this.props.addLog(this.state);
+        setTimeout(() => {
+              this.props.history.push('/emotion-chart'); }, 1000);
+        
     }
 
     composeEmotionForms = (nameArray) => {
@@ -61,7 +64,7 @@ class Form extends Component {
                 </CardGroup>
                 </Container>
                 <br />
-                <Button variant="outline-light" size="lg" onClick={this.handleSubmit}>Submit My Emotion Log!</Button>
+                <Button className={"submit-button"} variant="outline-light" size="lg" onClick={this.handleSubmit}>Submit My Emotion Log!</Button>
             </div>
         )
     };

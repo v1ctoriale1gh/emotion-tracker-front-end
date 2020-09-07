@@ -15,10 +15,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <DropDown className="flex-sm-row-reverse" />
-        <Route path="/emotion-log">
-        <Form />
-        </Route>
-        <Route path="/emotion-chart">
+        <Route exact path="/emotion-log" render={(routerProps) => <Form {...routerProps} />} />
+        <Route exact path="/emotion-chart">
         <AllEmotionChart />
         </Route>
         <Footer />
