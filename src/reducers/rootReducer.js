@@ -5,7 +5,6 @@ const rootReducer = combineReducers({
     logs: logsReducer,
     charts: chartReducer,
     user: userReducer
-    //error: errorReducer
   });
    
   export default rootReducer;
@@ -16,23 +15,12 @@ const rootReducer = combineReducers({
       case "GET_CHART":
         
       case "GET_ALL_EMOTION_CHART_DATA":
-      //console.log(action.logs)
-      //replace default value with the actual array we want so our app runs 
        return action.logs
    
       default:
         return state;
     }
   }
-
-  //function errorReducer(state = [], action) {
-  //  switch(action.type) {
-  //    case 'FETCH_FAILURE':
-  //      return action.error
-  //    default:
-  //      return state;
-  //  }
-  //}
 
   function userReducer(state = [], action) {
     switch (action.type) {
@@ -51,9 +39,6 @@ const rootReducer = combineReducers({
     switch (action.type) {
       case "ADD_LOG":
         return [state, action.log];
-        //case "GET_ALL_EMOTION_CHART_DATA":
-      //console.log(action.logs)
-       //return [state, action.logs]
       default:
         return state;
     }

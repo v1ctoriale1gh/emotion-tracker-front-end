@@ -1,7 +1,8 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import FooterLinks from './FooterLinks.js'
 
-const Footer = (props) => {
+const Footer = () => {
 
         return (
             <Container className={"footer"}>
@@ -29,7 +30,8 @@ const Footer = (props) => {
                         Be grateful for whoever comes,
                         because each has been sent
                         as a guide from beyond."
-                        - Rumi, "The Guest House"
+                        - Rumi, "The Guest House"<br /><br />
+                        <FooterLinks /><br />
                 </span>
                     
             </Container>

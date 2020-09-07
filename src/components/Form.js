@@ -56,7 +56,7 @@ class Form extends Component {
             <div className="center-align">
                 {this.props.user.id ?
                 <div>
-                <h3>Click on the number correlating to the level of intensity of your emotions:</h3>
+                <h3>Hello, { this.props.user.name }!  Click on the number correlating to the level of intensity of your emotions:</h3>
                 <h4>0 being not at all and 10 being very intense</h4>
                 <Container>
                 <CardGroup >

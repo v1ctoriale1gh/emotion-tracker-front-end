@@ -23,6 +23,7 @@ class AllEmotionChart extends Component {
     }
 
     composeData(){
+        if (this.props.chartData.length > 0 ) {
         let data = [['Day', 'Fear', 'Anger', 'Sadness', 'Anxiety', 'Happiness', 'Peacefulness', 'Gratitude']]
         let dates = []
         let emotionData = []
@@ -41,7 +42,12 @@ class AllEmotionChart extends Component {
             let position = index + 1
             data[position] = [`${data[position]}`, ...arrayOfNums]
         })
-        return  data
+        return  data 
+    } else {
+        return [['Day', 'Fear', 'Anger', 'Sadness', 'Anxiety', 'Happiness', 'Peacefulness', 'Gratitude'],
+                ["MAKE AN EMOTION LOG TO DISPLAY DATA", 0, 0, 0, 0, 0, 0, 0]]
+
+    }
     }
 
     render() {
