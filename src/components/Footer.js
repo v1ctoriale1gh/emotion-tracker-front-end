@@ -9,7 +9,7 @@ const Footer = (props) => {
 
         return (
             <Container className={"footer"}>
-                <Row>
+                <span className={"footer-text"} >
                         "This being human is a guest house.
                         Every morning a new arrival.
 
@@ -34,7 +34,7 @@ const Footer = (props) => {
                         because each has been sent
                         as a guide from beyond."
                         - Rumi, "The Guest House"
-                </Row>
+                </span>
                     
             </Container>
 

@@ -76,7 +76,7 @@
     }
 }
 
-span {
+.drop-down-text {
     font-size: 10px
 }
 
@@ -114,8 +114,13 @@ h4 {
   height: 226px;
   text-align: center;
   color: white;
+  position: relative;
+}
+.footer-text {
   font-size: 6px;
-  padding: 30px;
+  padding-bottom: 4px;
+  position:absolute;
+    bottom: 0;
 }
 
 .all-emotion-chart {

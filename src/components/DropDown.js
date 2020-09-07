@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 const popover = (
     <Popover id="popover-basic">
       <Popover.Content>
-        <Link to="/emotion-log"><span>log emotions</span></Link><br/>
-        <Link to="/emotion-chart"><span>emotion chart</span></Link><br/>
+        <Link to="/emotion-log"><span className={"drop-down-text"}>log emotions</span></Link><br/>
+        <Link to="/emotion-chart"><span className={"drop-down-text"}>emotion chart</span></Link><br/>
         <span>log out</span><br/>
         <span>menu</span>
       </Popover.Content>

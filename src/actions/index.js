@@ -27,6 +27,29 @@ export const addLog = (log) => {
             };
         };
 
+        export const addUser = (user) => {
+            let userData = {
+                user
+            }
+            return (dispatch) => {
+                dispatch({type: 'BEGIN_ADD_USER' });
+                fetch('https://localhost:3000/users', {
+                    method: "POST",
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                    })
+                    .then((obj) => obj.json())
+                    .then(() => dispatch({ type: 'ADD_USER', userData }))
+                    .catch((error) => {
+                        console.error('Error:', error);
+                      })
+                }
+            }
+            
+        
+
 
    //{"Fear"=>"6", "Anger"=>"5", "Sadness"=>"2", "Anxiety"=>"2", "Happiness"=>"2", "Peacefulness"=>"2", "Gratitude"=>"3", "controller"=>"logs", "action"=>"create", "user_id"=>"1", "log"=>{}}
    //{ Fear, Anger, Sadness, Anxiety, Happiness, Peacefulness, Gratitude }
