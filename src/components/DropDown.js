@@ -14,7 +14,6 @@ const popover = (
         <Link to="/"><span className={"drop-down-text"}>home</span></Link><br/>
         <Link to="/emotion-log"><span className={"drop-down-text"}>log emotions</span></Link><br/>
         <Link to="/emotion-chart"><span className={"drop-down-text"}>emotion chart</span></Link><br/>
-        <span>log out</span><br/>
       </Popover.Content>
     </Popover>
   );
@@ -40,4 +39,4 @@ const DropDown = () => {
         );
 }
 
-export default DropDown;
+export default (DropDown);

@@ -61,3 +61,10 @@ export const addUser = (user) => {
                 .then((obj) => dispatch({ type: 'LOGIN_USER', user: obj }))
             };
         };
+
+export const logoutUser = () => {
+    return (dispatch) => {
+        dispatch({ type: 'LOGOUT_USER'})
+        }
+    };
+            

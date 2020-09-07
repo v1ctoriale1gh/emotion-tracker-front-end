@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import  { loginUser } from '../actions/index';
+import  { loginUser, logoutUser } from '../actions/index';
 
 
 class UserLogin extends Component {
@@ -23,6 +23,14 @@ class UserLogin extends Component {
 
       handleSubmit = (e) => {
         this.props.loginUser(this.state)
+      }
+
+      componentDidMount() {
+          this.props.logoutUser()
+      }
+
+      componentDidUpdate() {
+          !!this.props.user.id && this.props.history.push('/emotion-log')
       }
 
       
@@ -52,8 +60,9 @@ class UserLogin extends Component {
 
 function mapStateToProps(state) {
     return {
-        error: state.user.loginerror
+        error: state.user.loginerror,
+        user: state.user
     }
 }
 
-export default connect(mapStateToProps, { loginUser })(UserLogin);
+export default connect(mapStateToProps, { loginUser, logoutUser })(UserLogin);

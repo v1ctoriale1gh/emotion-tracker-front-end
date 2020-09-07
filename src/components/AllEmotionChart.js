@@ -3,6 +3,7 @@ import { Chart } from "react-google-charts";
 import Container from 'react-bootstrap/Container';
 import { connect } from 'react-redux';
 import { getAllEmotionChartData } from '../actions';
+import UserLogin from './UserLogin.js';
 
 class AllEmotionChart extends Component {
      
@@ -45,6 +46,8 @@ class AllEmotionChart extends Component {
 
     render() {
       return (
+        <div>
+        {this.props.user.id ?
         <Container className={"all-emotion-chart"}>
           <Chart
             chartType="ColumnChart"
@@ -55,6 +58,9 @@ class AllEmotionChart extends Component {
             legendToggle
           />
         </Container>
+        :
+        <UserLogin /> }
+        </div>
       );
     }
 }
@@ -63,7 +69,6 @@ function mapStateToProps(state) {
     return {
         chartData: state.charts,
         user: state.user
-
     }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../actions';
+import { addUser, logoutUser } from '../actions';
 import { Container } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -22,9 +22,17 @@ class UserSignup extends Component {
             {[inputName]: value})
       }
 
+      componentDidMount() {
+        this.props.logoutUser()
+    }
+
       handleSubmit = (e) => {
           this.props.addUser(this.state)
       }
+
+      componentDidUpdate() {
+        !!this.props.user.id && this.props.history.push('/emotion-log')
+    }
 
       
 
@@ -54,8 +62,9 @@ class UserSignup extends Component {
 
 function mapStateToProps(state) {
     return {
-        error: state.user.signuperror
+        error: state.user.signuperror,
+        user: state.user
     }
 }
 
-export default connect(mapStateToProps, { addUser })(UserSignup);
+export default connect(mapStateToProps, { addUser, logoutUser })(UserSignup);

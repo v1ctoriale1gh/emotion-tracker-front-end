@@ -5,6 +5,7 @@ import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button';
 import { connect } from 'react-redux';
 import { addLog } from '../actions';
+import UserLogin from './UserLogin.js';
 
 
 
@@ -51,8 +52,10 @@ class Form extends Component {
 
 
     render() {
-        return(
+        return( 
             <div className="center-align">
+                {this.props.user.id ?
+                <div>
                 <h3>Click on the number correlating to the level of intensity of your emotions:</h3>
                 <h4>0 being not at all and 10 being very intense</h4>
                 <Container>
@@ -64,10 +67,14 @@ class Form extends Component {
                 </Container>
                 <br />
                 <Button className={"submit-button"} variant="outline-light" size="lg" onClick={this.handleSubmit}>Submit My Emotion Log!</Button>
+                </div>
+                 :
+                <UserLogin /> }
             </div>
         )
     };
-};
+
+}
 
 function mapStateToProps(state) {
     return {

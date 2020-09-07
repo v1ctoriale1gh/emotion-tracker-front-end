@@ -40,6 +40,8 @@ const rootReducer = combineReducers({
         return action.user;
       case "LOGIN_USER":
         return action.user;
+      case "LOGOUT_USER":
+        return state = []
       default:
         return state;
     }
