@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import  { loginUser } from '../actions/index';
 
 
 class UserLogin extends Component {
@@ -21,7 +22,7 @@ class UserLogin extends Component {
       }
 
       handleSubmit = (e) => {
-          console.log(e)
+        this.props.loginUser(this.state)
       }
 
       
@@ -55,4 +56,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(UserLogin);
+export default connect(mapStateToProps, { loginUser })(UserLogin);

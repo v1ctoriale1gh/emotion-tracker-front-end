@@ -18,7 +18,7 @@ class AllEmotionChart extends Component {
 
 
     componentDidMount() {
-        this.props.getAllEmotionChartData()
+        this.props.getAllEmotionChartData(this.props.user.id)
     }
 
     composeData(){
@@ -61,7 +61,9 @@ class AllEmotionChart extends Component {
 
 function mapStateToProps(state) {
     return {
-        chartData: state.charts
+        chartData: state.charts,
+        user: state.user
+
     }
 }
 

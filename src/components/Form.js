@@ -39,7 +39,7 @@ class Form extends Component {
     }
 
     handleSubmit = () => {
-        this.props.addLog(this.state);
+        this.props.addLog(this.state, this.props.user.id);
         setTimeout(() => {
               this.props.history.push('/emotion-chart'); }, 1000);
         
@@ -69,4 +69,10 @@ class Form extends Component {
     };
 };
 
-export default connect(null, { addLog })(Form);
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, { addLog })(Form);
