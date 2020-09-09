@@ -1,3 +1,5 @@
+
+
 export const addLog = (log, id) => {
     return (dispatch) => {
         let logData = { 
@@ -5,7 +7,7 @@ export const addLog = (log, id) => {
         }
         dispatch({ 
             type: 'BEGIN_ADD_LOG' });
-            fetch(`https://emotion-logger-back-end.herokuapp.com//users/${id}/logs`, {
+            fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/logs`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -20,7 +22,7 @@ export const getAllEmotionChartData = (id) => {
     return (dispatch) => {
         dispatch({
             type: 'BEGIN_GET_ALL_EMOTION_CHART_DATA'});
-            fetch(`https://emotion-logger-back-end.herokuapp.com//users/${id}/logs`)
+            fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/logs`)
             .then(response => response.json())
             .then(logs => dispatch({ type: 'GET_ALL_EMOTION_CHART_DATA', logs }));
         };
@@ -33,7 +35,7 @@ export const addUser = (user) => {
     }
     return (dispatch) => {
         dispatch({type: 'BEGIN_ADD_USER' });
-        fetch('https://emotion-logger-back-end.herokuapp.com//users', {
+        fetch(`https://emotion-logger-back-end.herokuapp.com/users` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -51,7 +53,7 @@ export const addUser = (user) => {
         }
         return (dispatch) => {
             dispatch({type: 'BEGIN_LOGIN_USER' });
-            fetch('https://emotion-logger-back-end.herokuapp.com//users/login', {
+            fetch(`https://emotion-logger-back-end.herokuapp.com/users/login`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
