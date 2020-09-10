@@ -1,6 +1,4 @@
-.App {
-  animation: bannerpulse 15s infinite;
-}
+
 
 .right-align {
   text-align: right;
@@ -81,16 +79,18 @@
 }
 
 .drop-down-text {
-    font-size: 10px
+    font-size: 15px
 }
 
 html,
 body {
   height: 100%;
+  animation: bannerpulse 15s infinite;
+  width: 100%;
 }
 
 .gradient {
-  font-size: 15px;
+  font-size: 20px;
   background: -webkit-linear-gradient(rgb(172, 194, 186), rgb(239,121,140));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,7 +105,7 @@ h3 {
 
 h4 {
   color: white;
-  font-size: 10px;
+  font-size: 15px;
  }
 
 
@@ -115,20 +115,21 @@ h4 {
 }
 
 .footer {
-  height: 333px;
+  height: 500px;
+  /* height: 100%; */
   text-align: left;
   color: white;
   position: relative;
 }
 .footer-text {
-  font-size: 6px;
+  font-size:11px;
   padding-bottom: 4px;
   position:absolute;
     bottom: 0;
 }
 
 .all-emotion-chart {
-  width: 1000px;
+  /*width: 1000px;*/
   align-content: center;
   padding: 15px;
   border-radius: 10px;
@@ -140,10 +141,11 @@ h4 {
 }
 
 .errors {
-  font-size: 10px;
+  font-size: 20px;
   color: red;
 }
 
 .home {
   text-align: center;
+  height: 200px;
 }
