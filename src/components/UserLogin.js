@@ -38,7 +38,7 @@ class UserLogin extends Component {
     render() {
         return(
             <div className={'user-cards'}>
-            <Container style={{ width: '15rem' }}>
+            <Container style={{ width: '18rem' }}>
             <Card >
                 <Card.Header>Log in</Card.Header>
                 <Card.Body>

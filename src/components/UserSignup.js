@@ -39,7 +39,7 @@ class UserSignup extends Component {
     render() {
         return(
             <div className={'user-cards'}>
-            <Container style={{ width: '15rem' }}>
+            <Container style={{ width: '18rem' }}>
             <Card >
                 <Card.Header>Sign Up</Card.Header>
                 <Card.Body>
