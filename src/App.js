@@ -8,13 +8,14 @@ import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin';
 import Home from './components/Home';
 import { Route } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 
 class App extends React.Component {
 
 
   render() {
     return (
-      <div className="App">
+      <Container fluid className="App">
         <DropDown className="flex-sm-row-reverse" />
         <Route exact path="/"><Home /></Route>
         <Route exact path="/log-in" render={(routerProps) => <UserLogin {...routerProps} />} />
@@ -24,7 +25,7 @@ class App extends React.Component {
         <AllEmotionChart />
         </Route>
         <Footer />
-      </div>
+      </Container>
     );
   };
 };

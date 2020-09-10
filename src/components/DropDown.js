@@ -26,7 +26,7 @@ const DropDown = () => {
             <Container className="right-align">
                 <Row>
                     <Col xs={6} md={4}>
-                        <OverlayTrigger trigger="click" placement="left" overlay={popover}>
+                        <OverlayTrigger trigger="click" rootClose placement="left" overlay={popover}>
                             <Image src={require('../happy-icon-small.png')} roundedCircle={true} />
                         </OverlayTrigger>
                     </Col>
