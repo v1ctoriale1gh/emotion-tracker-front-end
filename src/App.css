@@ -68,7 +68,7 @@
     color: rgb(172, 194, 186);
   }
   50% {
-      color: rgb(239,121,140);
+    color: rgb(172, 194, 186);
     }
     75% {
       color: rgb(172, 194, 186);
@@ -85,7 +85,7 @@
 html,
 body {
   height: 100%;
-  animation: bannerpulse 15s infinite;
+  animation: pulse 20s infinite;
   width: 100%;
 }
 
