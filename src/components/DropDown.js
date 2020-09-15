@@ -16,7 +16,15 @@ const popover = (
       <Popover.Content>
         <Link to="/"><span className={"drop-down-text"}>home</span></Link><br/>
         <Link to="/emotion-log"><span className={"drop-down-text"}>log emotions</span></Link><br/>
-        <Link to="/emotion-chart"><span className={"drop-down-text"}>emotion chart</span></Link><br/>
+        <Link to="/emotion-chart"><span className={"drop-down-text"}>All Emotion Bar Chart</span></Link><br/>
+        <span>Line Charts</span><br />
+        <Link to="/Fear"><span className={"drop-down-text"}>Fear</span></Link><br/>
+        <Link to="/Anger"><span className={"drop-down-text"}>Anger</span></Link><br/>
+        <Link to="/Sadness"><span className={"drop-down-text"}>Sadness</span></Link><br/>
+        <Link to="/Anxiety"><span className={"drop-down-text"}>Anxiety</span></Link><br/>
+        <Link to="/Happiness"><span className={"drop-down-text"}>Happiness</span></Link><br/>
+        <Link to="/Peacefulness"><span className={"drop-down-text"}>Peacefulness</span></Link><br/>
+        <Link to="/Gratitude"><span className={"drop-down-text"}>Gratitude</span></Link><br/>
       </Popover.Content>
     </Popover>
   );

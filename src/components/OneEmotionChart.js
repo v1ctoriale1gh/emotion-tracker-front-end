@@ -22,7 +22,7 @@ class OneEmotionChart extends Component {
 
     //when the component mounts, action creator to get all the data
     componentDidMount() {
-        this.props.getOneEmotionChartData(this.props.user.id, this.props.name)
+        !!this.props.user.id && this.props.getOneEmotionChartData(this.props.user.id, this.props.name)
     }
 
     composeData(){

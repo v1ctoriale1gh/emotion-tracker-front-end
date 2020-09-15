@@ -16,8 +16,9 @@ const rootReducer = combineReducers({
     //set default value so that our app doesn't break
     switch (action.type) {
       case "GET_ALL_EMOTION_CHART_DATA":
-       return action.logs
-   
+       return action.logs;
+      case "LOGOUT_USER":
+       return [];
       default:
         return state;
     }
@@ -27,8 +28,9 @@ const rootReducer = combineReducers({
     //set default value so that our app doesn't break
     switch (action.type) {
       case "GET_ONE_EMOTION_CHART_DATA":
-       return action.logs
-   
+       return action.logs;
+       case "LOGOUT_USER":
+        return [];
       default:
         return state;
     }
@@ -41,7 +43,7 @@ const rootReducer = combineReducers({
       case "LOGIN_USER":
         return action.user;
       case "LOGOUT_USER":
-        return state = []
+        return []
       default:
         return state;
     }
@@ -51,6 +53,8 @@ const rootReducer = combineReducers({
     switch (action.type) {
       case "ADD_LOG":
         return [state, action.log];
+      case "LOGOUT_USER":
+        return []
       default:
         return state;
     }

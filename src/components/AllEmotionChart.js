@@ -21,7 +21,7 @@ class AllEmotionChart extends Component {
 
     //when the component mounts, action creator to get all the data
     componentDidMount() {
-        this.props.getAllEmotionChartData(this.props.user.id)
+        !!this.props.user.id && this.props.getAllEmotionChartData(this.props.user.id) 
     }
 
     //if there is the data, (I.E. the fetch request has completed and state has been updated in 
@@ -63,7 +63,7 @@ class AllEmotionChart extends Component {
     render() {
       return (
         <div>
-        {this.props.user.id ?
+        {!!this.props.user.id ?
         <Container className={"all-emotion-chart"}>
           <Chart
             loader={<div>Loading Chart</div>}
@@ -86,8 +86,8 @@ class AllEmotionChart extends Component {
 
 function mapStateToProps(state) {
     return {
-        chartData: state.charts,
-        user: state.user
+        user: state.user,
+        chartData: state.charts
     }
 }
 

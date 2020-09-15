@@ -36,11 +36,13 @@ export const getAllEmotionChartData = (id) => {
         };
     };
 
-export const getOneEmotionChartData = (id, emotion) => {
+export const getOneEmotionChartData = (id, name) => {
     return (dispatch) => {
+        console.log(id, name)
         dispatch({
             type: 'BEGIN_GET_ONE_EMOTION_CHART_DATA'});
-            fetch(`https://emotion-logger-back-end.herokuapp.com/users/1/Fear`)
+            console.log(id, name)
+            fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/${name}`)
             .then(response => response.json())
             .then(logs => dispatch({ type: 'GET_ONE_EMOTION_CHART_DATA', logs }));
         };
