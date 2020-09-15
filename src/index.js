@@ -41,7 +41,7 @@ const store = createStore(rootReducer, enhancer)
 ReactDOM.render(
   <Router>
     <Provider store={store}>
-      <App store={store}/>
+      <App />
     </Provider>
   </Router>,
   document.getElementById('root')

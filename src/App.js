@@ -17,18 +17,19 @@ import { Route } from 'react-router-dom';
 //bootstrap container
 import Container from 'react-bootstrap/Container';
 
-//const makeIndEmotionCharts = (arrayOfNames) = {
-//  arrayOfNames.forEach((name) => {
-//  return ({
-//    <Route exact path=`/${name}`>
-//    <OneEmotionChart name={name} />
-//    </Route>
-//  })
-//  }
-//})
 
 class App extends Component {
 
+  makeIndEmotionCharts = (arrayOfNames) => {
+    return arrayOfNames.map((name) => {
+      console.log(name)
+    return (
+      <Route exact key={name} path={`/${name}`}>
+        <OneEmotionChart name={name} />
+      </Route>
+    )
+    })
+  }
 
 
 
@@ -45,27 +46,7 @@ class App extends Component {
         <Route exact path="/emotion-chart">
           <AllEmotionChart />
         </Route>
-        <Route exact path="/Fear">
-          <OneEmotionChart name={"Fear"} />
-        </Route>
-        <Route exact path="/Anger">
-          <OneEmotionChart name={"Anger"} />
-        </Route>
-        <Route exact path="/Sadness">
-          <OneEmotionChart name={"Sadness"} />
-        </Route>
-        <Route exact path="/Anxiety">
-          <OneEmotionChart name={"Anxiety"} />
-        </Route>
-        <Route exact path="/Happiness">
-          <OneEmotionChart name={"Happiness"} />
-        </Route>
-        <Route exact path="/Peacefulness">
-          <OneEmotionChart name={"Peacefulness"} />
-        </Route>
-        <Route exact path="/Gratitude">
-          <OneEmotionChart name={"Gratitude"} />
-        </Route>
+        {this.makeIndEmotionCharts(["Fear", "Anger", "Sadness", "Anxiety", "Happiness", "Peacefulness", "Gratitude"])}
         <Footer />
       </Container>
     );

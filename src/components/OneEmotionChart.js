@@ -76,6 +76,13 @@ function mapStateToProps(state) {
     }
 }
 
+
+//function mapDispatchToProps(dispatch) {
+//  return {
+//        boundGetOneEmotionChartData: (id, name) => dispatch(getOneEmotionChartData(id,name))
+//}    
+
+//
 //pass in mapstate to props and map dispatch to props, and connect the component to redux store
 
 export default connect(mapStateToProps, { getOneEmotionChartData })(OneEmotionChart);

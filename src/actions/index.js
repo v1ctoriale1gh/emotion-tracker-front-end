@@ -22,7 +22,7 @@ export const addLog = (log, id) => {
                 },
                 body: JSON.stringify(logData)
                 })
-                .then(() => dispatch({ type: 'ADD_LOG', logData}));
+                .then((obj) => dispatch({ type: 'ADD_LOG', obj}));
             };
     };
 

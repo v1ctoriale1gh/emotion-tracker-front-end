@@ -68,4 +68,9 @@ function mapStateToProps(state) {
     }
 }
 
+//function mapDispatchToProps(dispatch) {
+//    boundAddUser: dispatch(user => (addUser(user))),
+//    boundLogoutUser: dispatch(logoutUser)
+//}
+
 export default connect(mapStateToProps, { addUser, logoutUser })(UserSignup);
