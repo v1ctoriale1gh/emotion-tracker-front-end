@@ -2,6 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import FooterLinks from './FooterLinks.js'
 
+//okay so technically.... is this is a stateless component... but would it be considered
+//presentational or container? cause it does contain another component.....
+
 const Footer = () => {
 
         return (

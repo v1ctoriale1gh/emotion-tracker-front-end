@@ -2,6 +2,8 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 
+//presentational/stateless/functional component with links to log in or sign up... links imported from react-router-dom
+
 const Home = () => {
 
         return (

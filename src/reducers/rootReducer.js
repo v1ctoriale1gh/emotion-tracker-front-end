@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
+//using multiple reducers, one for users and log in, one for making emotion logs, and one for getting the chart data
+
 
 const rootReducer = combineReducers({
     logs: logsReducer,

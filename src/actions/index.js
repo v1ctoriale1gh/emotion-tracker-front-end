@@ -1,3 +1,11 @@
+//all of my action creators
+//thunx allows me to return functions, and even multiple functions in my action creators
+//so that here I can perform my async fetch requests here
+//so that my that I can place logic inside of these action creators like
+//on like 15, 30, 43, etc, these were useful to me in debugging but is it necessary to have a seperate
+//case in my reducer to MAKE my app do something diff while waiting on the requests?
+//it's so dinky...and takes so little time on the back end to fulfill a promise...
+//I do realize I could go into my reducer and but a case that returns the current state before updated...or loading state or something...
 
 
 export const addLog = (log, id) => {

@@ -1,5 +1,8 @@
+//import react component for lifecycle methods
 import React, { Component } from 'react';
+//import individual emotion component
 import EmotionForm from './EmotionForm.js';
+//import some bootstrapping
 import Container from 'react-bootstrap/Container';
 import CardGroup from 'react-bootstrap/CardGroup'
 import Button from 'react-bootstrap/Button';
@@ -11,6 +14,8 @@ import UserLogin from './UserLogin.js';
 
 class Form extends Component {
 
+    //alternate syntax... apparently you dont need to use a contstructor you can just say
+    //state = {} and dump it on the ground in the the component
     constructor() {
         super();
         this.state = {
@@ -24,6 +29,11 @@ class Form extends Component {
         };
     };
 
+
+    //onClick clallback method to be passed down to child component,
+    //takes a chosen number and changes the css,
+    //if the number hasn't been clicked it sets the state,
+    //if it's being clicked again, it sets the state to 0
     numberClick = (e) => {
         e.persist();
         if (e.target.className === "chosen-number") {
@@ -39,13 +49,22 @@ class Form extends Component {
         }
     }
 
+    //on submit of form (bootstrap button) use addLog action creator from mDTP, pass in the user's ID, and local state 
     handleSubmit = () => {
         this.props.addLog(this.state, this.props.user.id);
+        //time out here because it takes about one second for everything to load in the back end, and I was having issues where it was trying
+        //to render the emotions chart of=n the following page before backend process was completing
+        //then creating errors on the data formation that I'm making to pass into to google API
+        //so set this time out to wait then push forward to emotion log on submit
+        ///..... I think I should possibly be doing this in my action creator... (but was confused about where I had access to my router props...)
+        // REVIEWER? WHERE IS THE CORRECT PLACE TO DO THIS, IS THIS RIGHT?
         setTimeout(() => {
               this.props.history.push('/emotion-chart'); }, 1000);
         
     }
 
+
+    //function to compose each emotion component with a diff emotion name and pass in number click method
     composeEmotionForms = (nameArray) => {
     return nameArray.map(name => <EmotionForm key={name} name={`${name}`} numberClick={this.numberClick} />)
     }
@@ -76,10 +95,14 @@ class Form extends Component {
 
 }
 
+//lets get that user from redux store global state
+
 function mapStateToProps(state) {
     return {
         user: state.user
     }
 }
+
+//lets connect that component and pass in that action creator
 
 export default connect(mapStateToProps, { addLog })(Form);

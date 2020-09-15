@@ -5,7 +5,6 @@ import { Container } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-
 class UserSignup extends Component {
 
     state = {
@@ -34,6 +33,8 @@ class UserSignup extends Component {
         !!this.props.user.id && this.props.history.push('/emotion-log')
     }
 
+    //REVIEWER: WHY put the value set to state in the form below?  I have a place holder, the labs say to use value={this.state.name} & value={this.state.password}
+    //I chose to use a place holder instead for aesthetic reasons... does this go against convention of controlled forms? I DIDNT PASS IN THE EVENT HERE, HOWEVER
       
 
     render() {

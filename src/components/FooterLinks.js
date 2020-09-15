@@ -1,6 +1,8 @@
 import React from 'react';
 
 
+//presentational component that contains my contact info because im tryna get that job tho
+
 const FooterLinks = () => {
 
         return (
