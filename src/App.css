@@ -16,12 +16,18 @@
   0% {
     background-color: rgb(239,121,140);
   }
-  50% {
+  25% {
     background-color: rgb(172, 194, 186);
   }
-  100% {
-    background-color: rgb(239,121,140);
-  }
+  50% {
+      background-color: rgb(239,121,140);
+    }
+    75% {
+      background-color: rgb(172, 194, 186);
+    }
+    100% {
+      background-color: rgb(239,121,140);
+    }
 }
 
 
@@ -68,7 +74,7 @@
     color: rgb(172, 194, 186);
   }
   50% {
-    color: rgb(172, 194, 186);
+      color: rgb(239,121,140);
     }
     75% {
       color: rgb(172, 194, 186);
@@ -85,7 +91,7 @@
 html,
 body {
   height: 100%;
-  animation: pulse 20s infinite;
+  animation: bannerpulse 50s infinite;
   width: 100%;
 }
 

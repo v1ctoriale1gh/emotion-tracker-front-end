@@ -7,6 +7,7 @@ import Form from './components/Form.js';
 import DropDown from './components/DropDown.js';
 import Footer from './components/Footer.js';
 import AllEmotionChart from './components/AllEmotionChart.js';
+import OneEmotionChart from './components/OneEmotionChart.js';
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin';
 import Home from './components/Home';
@@ -30,6 +31,9 @@ class App extends Component {
         <Route exact path="/log-in" render={(routerProps) => <UserLogin {...routerProps} />} />
         <Route exact path="/sign-up" render={(routerProps) => <UserSignup {...routerProps} />} />
         <Route exact path="/emotion-log" render={(routerProps) => <Form {...routerProps} />} />
+        <Route exact path="/Fear">
+          <OneEmotionChart name={"Fear"} />
+        </Route>
         <Route exact path="/emotion-chart">
         <AllEmotionChart />
         </Route>

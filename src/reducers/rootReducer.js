@@ -6,7 +6,8 @@ import { combineReducers } from "redux";
 const rootReducer = combineReducers({
     logs: logsReducer,
     charts: chartReducer,
-    user: userReducer
+    user: userReducer,
+    emotionCharts: emotionChartReducer
   });
    
   export default rootReducer;
@@ -14,9 +15,18 @@ const rootReducer = combineReducers({
   function chartReducer(state = [], action) {
     //set default value so that our app doesn't break
     switch (action.type) {
-      case "GET_CHART":
-        
       case "GET_ALL_EMOTION_CHART_DATA":
+       return action.logs
+   
+      default:
+        return state;
+    }
+  }
+
+  function emotionChartReducer(state = [], action) {
+    //set default value so that our app doesn't break
+    switch (action.type) {
+      case "GET_ONE_EMOTION_CHART_DATA":
        return action.logs
    
       default:

@@ -66,6 +66,7 @@ class AllEmotionChart extends Component {
         {this.props.user.id ?
         <Container className={"all-emotion-chart"}>
           <Chart
+            loader={<div>Loading Chart</div>}
             chartType="ColumnChart"
             options={this.options}
             data={this.composeData()}

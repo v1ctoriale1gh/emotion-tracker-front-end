@@ -5,7 +5,7 @@
 //on like 15, 30, 43, etc, these were useful to me in debugging but is it necessary to have a seperate
 //case in my reducer to MAKE my app do something diff while waiting on the requests?
 //it's so dinky...and takes so little time on the back end to fulfill a promise...
-//I do realize I could go into my reducer and but a case that returns the current state before updated...or loading state or something...
+//I do realize I could go into my reducer and but a case that returns the current state before...or loading state or something...
 
 
 export const addLog = (log, id) => {
@@ -33,6 +33,16 @@ export const getAllEmotionChartData = (id) => {
             fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/logs`)
             .then(response => response.json())
             .then(logs => dispatch({ type: 'GET_ALL_EMOTION_CHART_DATA', logs }));
+        };
+    };
+
+export const getOneEmotionChartData = (id, emotion) => {
+    return (dispatch) => {
+        dispatch({
+            type: 'BEGIN_GET_ONE_EMOTION_CHART_DATA'});
+            fetch(`https://emotion-logger-back-end.herokuapp.com/users/1/Fear`)
+            .then(response => response.json())
+            .then(logs => dispatch({ type: 'GET_ONE_EMOTION_CHART_DATA', logs }));
         };
     };
 

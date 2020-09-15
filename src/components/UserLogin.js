@@ -57,7 +57,7 @@ class UserLogin extends Component {
                     {/* this is how I render errors, doesn't show if there are not any in global state/props */}
                     <p className={'errors'}>{this.props.error}</p>
                     <form>
-                    <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" /><br />
+                    <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" value={this.state.username}/><br />
                     <input type="password" name="password" onChange={this.handleInput} placeholder="Password" /><br /><br />
                     <Button variant="outline-secondary" size="sm" onClick={this.handleSubmit}>Log in</Button>
                     </form>
