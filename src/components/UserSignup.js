@@ -18,7 +18,8 @@ class UserSignup extends Component {
         let value = e.target.value
         let inputName = e.target.name
         this.setState(
-            {[inputName]: value})
+            {[inputName]: value}
+            )
       }
 
       componentDidMount() {
@@ -33,8 +34,7 @@ class UserSignup extends Component {
         !!this.props.user.id && this.props.history.push('/emotion-log')
     }
 
-    //REVIEWER: WHY put the value set to state in the form below?  I have a place holder, the labs say to use value={this.state.name} & value={this.state.password}
-    //I chose to use a place holder instead for aesthetic reasons... does this go against convention of controlled forms? I DIDNT PASS IN THE EVENT HERE, HOWEVER
+//REVIEWER - in controlled forms, why use the value={state.blah.blah}, it works without.... is it to get most updated state?
       
 
     render() {
@@ -46,9 +46,9 @@ class UserSignup extends Component {
                 <Card.Body>
                     <p className={'errors'}>{this.props.error}</p>
                     <form>
-                    <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" /><br />
-                    <input type="text" name="name" onChange={this.handleInput} placeholder="Enter your first name" /><br />
-                    <input type="password" name="password" onChange={this.handleInput} placeholder="Password" /><br /><br />
+                    <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" value={this.state.username}/><br />
+                    <input type="text" name="name" onChange={this.handleInput} placeholder="Enter your first name" value={this.state.name}/><br />
+                    <input type="password" name="password" onChange={this.handleInput} placeholder="Password" value={this.state.password}/><br /><br />
                     <Button variant="outline-secondary" size="sm" onClick={this.handleSubmit}>Sign Up</Button>
                     </form>
                 </Card.Body>

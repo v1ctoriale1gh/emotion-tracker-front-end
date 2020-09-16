@@ -22,7 +22,6 @@ class App extends Component {
 
   makeIndEmotionCharts = (arrayOfNames) => {
     return arrayOfNames.map((name) => {
-      console.log(name)
     return (
       <Route exact key={name} path={`/${name}`}>
         <OneEmotionChart name={name} />

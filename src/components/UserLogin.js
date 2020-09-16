@@ -58,7 +58,7 @@ class UserLogin extends Component {
                     <p className={'errors'}>{this.props.error}</p>
                     <form>
                     <input type="text" name="username" onChange={this.handleInput} placeholder="Enter a Username" value={this.state.username}/><br />
-                    <input type="password" name="password" onChange={this.handleInput} placeholder="Password" /><br /><br />
+                    <input type="password" name="password" onChange={this.handleInput} placeholder="Password" value={this.state.password}/><br /><br />
                     <Button variant="outline-secondary" size="sm" onClick={this.handleSubmit}>Log in</Button>
                     </form>
                 </Card.Body>
