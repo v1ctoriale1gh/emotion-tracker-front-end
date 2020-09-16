@@ -20,6 +20,7 @@ import Container from 'react-bootstrap/Container';
 
 class App extends Component {
 
+  //iterate over list an make individual components for each emotion line chart
   makeIndEmotionCharts = (arrayOfNames) => {
     return arrayOfNames.map((name) => {
     return (

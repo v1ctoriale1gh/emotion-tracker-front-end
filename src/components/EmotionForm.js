@@ -10,7 +10,7 @@ const EmotionForm = (props) => {
   //make an array of numbers and for each one put in the passed in props from it's parent component
   //numberclick that changes it's css and sets parent component local state
   function composeNumberSpans() {
-    let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     return numArray.map(num => <span key={num} onClick={props.numberClick}>{num} </span>)
   }
 
