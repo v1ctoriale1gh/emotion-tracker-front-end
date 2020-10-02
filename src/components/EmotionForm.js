@@ -15,7 +15,6 @@ const EmotionForm = (props) => {
   }
 
         return (
-
           <Card style={{ width: '9rem' }}>
             <Card.Body>
               <Card.Title><p className="gradient">{props.name}: </p></Card.Title>

@@ -27,6 +27,7 @@ class Form extends Component {
             Peacefulness: '0',
             Gratitude: '0'
         };
+        //this.boundHandleSubmit = this.handleSubmit.bind(this)
     };
 
 
@@ -62,6 +63,9 @@ class Form extends Component {
               this.props.history.push('/emotion-chart'); }, 1000);
         
     }
+
+    //boundHandleSubmit = handleSubmit.bind(this)
+
 
 
     //function to compose each emotion component with a diff emotion name and pass in number click method

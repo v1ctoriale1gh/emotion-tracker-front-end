@@ -15,7 +15,7 @@ export const addLog = (log, id) => {
         }
         dispatch({ 
             type: 'BEGIN_ADD_LOG' });
-            fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/logs`, {
+            fetch(`http://localhost:3000/users/${id}/logs`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ export const getAllEmotionChartData = (id) => {
     return (dispatch) => {
         dispatch({
             type: 'BEGIN_GET_ALL_EMOTION_CHART_DATA'});
-            fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/logs`)
+            fetch(`http://localhost:3000/users/${id}/logs`)
             .then(response => response.json())
             .then(logs => dispatch({ type: 'GET_ALL_EMOTION_CHART_DATA', logs }));
         };
@@ -42,7 +42,7 @@ export const getOneEmotionChartData = (id, name) => {
         dispatch({
             type: 'BEGIN_GET_ONE_EMOTION_CHART_DATA'});
             console.log(id, name)
-            fetch(`https://emotion-logger-back-end.herokuapp.com/users/${id}/${name}`)
+            fetch(`http://localhost:3000/users/${id}/${name}`)
             .then(response => response.json())
             .then(logs => dispatch({ type: 'GET_ONE_EMOTION_CHART_DATA', logs }));
         };
@@ -55,7 +55,7 @@ export const addUser = (user) => {
     }
     return (dispatch) => {
         dispatch({type: 'BEGIN_ADD_USER' });
-        fetch(`https://emotion-logger-back-end.herokuapp.com/users` , {
+        fetch(`http://localhost:3000/users` , {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -73,7 +73,7 @@ export const addUser = (user) => {
         }
         return (dispatch) => {
             dispatch({type: 'BEGIN_LOGIN_USER' });
-            fetch(`https://emotion-logger-back-end.herokuapp.com/users/login`, {
+            fetch(`http://localhost:3000/users/login`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

@@ -35,7 +35,7 @@ class OneEmotionChart extends Component {
             logArray.push(parseInt(log.intensity))
             data.push(logArray)
         })
-        console.log(data)
+        //console.log(data)
         return data
     } else {
         return [['Date', 'Intensity'],
